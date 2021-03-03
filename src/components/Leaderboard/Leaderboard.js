@@ -8,11 +8,11 @@ export class Leaderboard extends Component {
     };
   }
   componentDidMount() {
-    fetch("http://localhost:3000/leaderboard")
+    fetch("https://sheltered-journey-89423.herokuapp.com/leaderboard")
       .then((res) => res.json())
       .then((ranks) => {
         return ranks.map((user, i) => {
-          fetch(`http://localhost:3000/rank/${user.id}`)
+          fetch(`https://sheltered-journey-89423.herokuapp.com/rank/${user.id}`)
             .then((res) => res.json())
             .then((rank) => {
               ranks[i].rank = rank;
@@ -27,7 +27,7 @@ export class Leaderboard extends Component {
       <ul className="list">
         {this.state.rankingInfo.map((rank) => {
           return (
-              <li key={rank.id}>{rank.rank}. {rank.name} with {rank.entries} faces detected</li>
+              <li key={rank.id}>{rank.rank}. {rank.name} with {rank.entries} {rank.entries === 1 ? 'face' : 'faces'}  detected</li>
           );
         })}
       </ul>

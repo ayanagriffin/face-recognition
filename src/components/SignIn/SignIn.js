@@ -17,7 +17,7 @@ class SignIn extends Component {
   };
 
   onSubmitSignIn = () => {
-    fetch('http://localhost:3000/signin', {
+    fetch('https://sheltered-journey-89423.herokuapp.com/signin', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -29,7 +29,7 @@ class SignIn extends Component {
     .then(user => {
       if(user.id){
         
-        fetch(`http://localhost:3000/rank/${user.id}`)
+        fetch(`https://sheltered-journey-89423.herokuapp.com/rank/${user.id}`)
         .then(res => res.json())
         .then(rank => {
           this.props.loadUser(user, rank);

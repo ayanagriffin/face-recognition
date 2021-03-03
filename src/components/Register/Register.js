@@ -24,7 +24,7 @@ class Register extends Component {
   }
 
   onSubmitRegister = () => {
-    fetch('http://localhost:3000/register', {
+    fetch('https://sheltered-journey-89423.herokuapp.com/register', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -37,7 +37,7 @@ class Register extends Component {
     .then(user => {
 
       if(user.id){
-        fetch(`http://localhost:3000/rank/${user.id}`)
+        fetch(`https://sheltered-journey-89423.herokuapp.com/rank/${user.id}`)
         .then(res => res.json())
         .then(rank => {
           this.props.loadUser(user, rank);

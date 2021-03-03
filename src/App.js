@@ -72,7 +72,7 @@ class App extends Component {
   };
 
   onButtonSubmit = () => {
-    fetch("http://localhost:3000/imageurl", {
+    fetch("https://sheltered-journey-89423.herokuapp.com/imageurl", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -86,7 +86,7 @@ class App extends Component {
         return boxes.length;
       })
       .then((numBoxes) => {
-        fetch("http://localhost:3000/image", {
+        fetch("https://sheltered-journey-89423.herokuapp.com/image", {
           method: "put",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -98,7 +98,7 @@ class App extends Component {
           .then((count) => {
             // prevents from completing overwriting the user object
 
-            fetch(`http://localhost:3000/rank/${this.state.user.id}`)
+            fetch(`https://sheltered-journey-89423.herokuapp.com/rank/${this.state.user.id}`)
               .then((res) => res.json())
               .then((rank) => {
                 this.setState(
