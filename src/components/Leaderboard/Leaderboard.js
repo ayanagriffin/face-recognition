@@ -24,7 +24,7 @@ export class Leaderboard extends Component {
 
   render() {
     return (
-      <ul className="list">
+      <ul className="list f4 mb2">
         {this.state.rankingInfo.map((rank) => {
           return (
               <li key={rank.id}>{rank.rank}. {rank.name} with {rank.entries} {rank.entries === 1 ? 'face' : 'faces'}  detected</li>
