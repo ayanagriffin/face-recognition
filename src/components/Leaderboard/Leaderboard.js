@@ -24,10 +24,10 @@ export class Leaderboard extends Component {
 
   render() {
     return (
-      <ul className="list f4 mb2">
+      <ul className="list">
         {this.state.rankingInfo.map((rank) => {
           return (
-              <li key={rank.id}>{rank.rank}. {rank.name} with {rank.entries} {rank.entries === 1 ? 'face' : 'faces'}  detected</li>
+              <li className="f4 mb2" key={rank.id}>{rank.rank}. {rank.name} with {rank.entries} {rank.entries === '1' ? 'face' : 'faces'}  detected</li>
           );
         })}
       </ul>
