@@ -6,4 +6,4 @@ This face recognition model allows you to create an account, upload images for t
 
 ## Tech-stack
 
-This project was made with create-react-app and the [Clarifai API](https://www.clarifai.com/)
+This project was made with create-react-app and the [Clarifai API](https://www.clarifai.com/). The back-end was built with Node.js and PostgreSQL and can be viewed [in this repository](https://github.com/ayanagriffin/smart-brain-api)
